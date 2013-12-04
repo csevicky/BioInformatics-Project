@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Javascript Phylogeny Viewer</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/docs.css" rel="stylesheet">
+        <style>
+            body {
+                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://blog.accursedware.com/jquery-svgpan/jquery-svgpan.js"></script>
+        <script src="js/sample.js"></script>
+        <script src="js/treelib.js"></script>	
+
+
+
+        <script src="lib/underscore-min.js"></script>
+        <script src="lib/backbone-min.js"></script>
+        <script src="lib/bootstrap.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/models/models.js"></script>
+        <script src="js/views/paginator.js"></script>
+        <script src="js/views/header.js"></script>
+        <script src="js/views/winelist.js"></script>
+        <script src="js/views/winedetails.js"></script>
+        <script src="js/views/about.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".subnav" data-offset="50">
+        <div class="header"></div>
+
+        <p><b>Paste in a <a href="http://en.wikipedia.org/wiki/Newick_format">Newick-format</a> tree description</b></p>
+        <div>
+            <textarea id="newick" rows="5" cols=100"></textarea>
+            <select id="style">
+                <option value="cladogram">Cladogram</option>
+                <option value="rectanglecladogram">Rectangular cladogram</option>
+                <option value="phylogram">Phylogram</option>
+                <option value="circle">Circle tree</option>
+                <option value="circlephylogram">Circle phylogram</option>
+            </select>
+            <button onclick="showtree_sample('newick')">Show</button>
+        </div>
+
+        <p><span id="message1"></span></p>
+        <div style="width:300px;height:300px;background-color:white;border:1px solid rgb(228,228,228);">
+            <svg id="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1" height="300" width="300">
+            <g id="viewport1">
+            </g>
+            </svg>
+        </div>
+        <p><span id="message2"></span></p>
+        <div style="width:300px;height:300px;background-color:white;border:1px solid rgb(228,228,228);">
+            <svg id="svg2" xmlns="http://www.w3.org/2000/svg" version="1.1" height="300" width="300">
+            <g id="viewport2">
+            </g>
+            </svg>
+        </div>
+        <p><span id="message3"></span></p>
+        <div style="width:300px;height:300px;background-color:white;border:1px solid rgb(228,228,228);">
+            <svg id="svg3" xmlns="http://www.w3.org/2000/svg" version="1.1" height="300" width="300">
+            <g id="viewport3">
+            </g>
+            </svg>
+        </div>
+        <p><span id="message4"></span></p>
+        <div style="width:300px;height:300px;background-color:white;border:1px solid rgb(228,228,228);">
+            <svg id="svg4" xmlns="http://www.w3.org/2000/svg" version="1.1" height="300" width="300">
+            <g id="viewport4">
+            </g>
+            </svg>
+        </div>
+        <div class="row">
+            <div id="content" class="span12>"></div>
+        </div>
+        <footer class="footer">
+            <p class="pull-right"><a href="#">Back Home</a></p>
+
+            <p>Built for Bioinformatics CAP 5510 Project with <a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone.js</a>
+                and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a> by <a
+                    href="https://twitter.com/csevicky" target="_blank">Subhankar Mishra</a>.</p>
+
+            <p>The source code for this application is available in <a href="#">this repository</a> on GitHub.</p>
+        </footer>
+    </body>
+</html>
